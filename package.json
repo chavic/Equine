@@ -1,0 +1,28 @@
+{
+  "name": "equine",
+  "version": "1.0.0",
+  "description": "A simple system for a hospital",
+  "main": "app.js",
+  "scripts": {
+    "test": "npm run test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chavic/equine-hostital-system.git"
+  },
+  "keywords": [
+    "equine",
+    "hostital",
+    "system",
+    "manament",
+    "wards",
+    "patients",
+    "doctors"
+  ],
+  "author": "chavic <dev.chavic@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chavic/equine-hostital-system/issues"
+  },
+  "homepage": "https://github.com/chavic/equine-hostital-system#readme"
+}
