@@ -140,19 +140,6 @@ app.put('/api/wards/:id', (req, res) => {
     });
   });
 
-app.put('/api/wards/:id', (req, res) => {
-    const wardId = req.params.id;
-    const updatedWard = req.body; 
-    db.query('UPDATE Wards SET ? WHERE WardID = ?', [updatedWard, wardId], (err, result) => {
-      if (err) {
-        console.error('Error updating ward:', err);
-        res.status(500).json({ error: 'Internal Server Error' });
-      } else {
-        res.json({ message: 'Ward updated successfully' });
-      }
-    });
-  });
-
 app.delete('/api/wards/:id', (req, res) => {
     const wardId = req.params.id;
     db.query('DELETE FROM Wards WHERE WardID = ?', [wardId], (err, result) => {
