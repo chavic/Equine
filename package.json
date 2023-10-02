@@ -4,7 +4,8 @@
   "description": "A simple system for a hospital",
   "main": "app.js",
   "scripts": {
-    "test": "npm run test.js"
+    "start": "node app.js",
+    "test": "mocha tests/**/*.js"
   },
   "repository": {
     "type": "git",
@@ -24,5 +25,20 @@
   "bugs": {
     "url": "https://github.com/chavic/equine-hostital-system/issues"
   },
-  "homepage": "https://github.com/chavic/equine-hostital-system#readme"
+  "homepage": "https://github.com/chavic/equine-hostital-system#readme",
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.2",
+    "moment": "^2.29.4",
+    "mysql2": "^3.6.1",
+    "uuid": "^9.0.1"
+  },
+  "devDependencies": {
+    "chai": "^4.3.10",
+    "chai-http": "^4.4.0",
+    "jest": "^29.7.0",
+    "mocha": "^10.2.0",
+    "supertest": "^6.3.3"
+  }
 }
