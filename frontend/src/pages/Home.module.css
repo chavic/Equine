@@ -1,0 +1,100 @@
+.goodMorningGeorge,
+.hereAnOverview {
+  position: relative;
+  letter-spacing: 0.03em;
+  font-weight: 500;
+}
+.hereAnOverview {
+  font-size: var(--normal-paragraph-size);
+  color: var(--mid-darker-blue);
+}
+.greetings {
+  align-self: stretch;
+  height: 90px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: var(--gap-3xs);
+}
+.icontylPluslightboldadd {
+  position: relative;
+  width: 24px;
+  height: 24px;
+}
+.icontylPluslightboldaddParent {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: var(--gap-base);
+}
+.addwardbtn,
+.bottomcontaner {
+  height: 50px;
+  display: flex;
+  justify-content: flex-start;
+}
+.addwardbtn {
+  border-radius: var(--br-5xs);
+  background-color: var(--black);
+  width: 244px;
+  flex-direction: row;
+  align-items: center;
+  padding: 0 var(--padding-13xl);
+  box-sizing: border-box;
+}
+.bottomcontaner {
+  align-self: stretch;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.rectangle {
+  position: relative;
+  border-radius: var(--br-5xs);
+  background-color: var(--white);
+  width: 330px;
+  height: 220px;
+}
+.overviewcontainer {
+  align-self: stretch;
+  display: none;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 36px 0;
+  gap: 36px;
+}
+.dashboard {
+  align-self: stretch;
+  flex: 1;
+  flex-direction: column;
+  gap: var(--gap-3xs);
+  font-size: var(--normal-paragraph-size);
+  color: var(--white);
+}
+.dashboard,
+.home,
+.main {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.main {
+  align-self: stretch;
+  flex: 1;
+  flex-direction: column;
+  padding: 0 var(--padding-29xl);
+}
+.home {
+  position: relative;
+  background-color: var(--light-blue);
+  width: 100%;
+  height: 1024px;
+  overflow: hidden;
+  flex-direction: row;
+  text-align: left;
+  font-size: var(--font-size-17xl);
+  color: var(--darker-blue);
+  font-family: var(--normal-paragraph);
+}

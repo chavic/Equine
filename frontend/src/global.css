@@ -1,0 +1,66 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Serif:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@500;600&display=swap");
+body {
+  margin: 0;
+  line-height: normal;
+}
+:root {
+  /* fonts */
+  --normal-paragraph: "Libre Franklin";
+  --font-roboto-serif: "Roboto Serif";
+
+  /* font sizes */
+  --normal-paragraph-size: 16px;
+  --font-size-17xl: 36px;
+  --font-size-sm: 14px;
+  --font-size-5xl: 24px;
+  --font-size-smi: 13px;
+  --font-size-2xs: 11px;
+  --font-size-xs: 12px;
+  --font-size-xl: 20px;
+
+  /* Colors */
+  --light-blue: #e8edf5;
+  --white: #fff;
+  --mid-darker-blue: #717987;
+  --darker-blue: #354250;
+  --darker-light-blue: #b4bbcc;
+  --color-gray-100: #191919;
+  --black: #050505;
+  --color-black: #000;
+  --color-lavender: #dfe6f1;
+  --color-darkgray: #98a3ae;
+  --color-gainsboro: #d9d9d9;
+
+  /* Gaps */
+  --gap-3xs: 10px;
+  --gap-xs: 12px;
+  --gap-base: 16px;
+  --gap-12xs: 1px;
+  --gap-7xs: 6px;
+  --gap-4xl: 23px;
+  --gap-31xl: 50px;
+  --gap-109xl: 128px;
+
+  /* Paddings */
+  --padding-29xl: 48px;
+  --padding-31xl: 50px;
+  --padding-5xl: 24px;
+  --padding-base: 16px;
+  --padding-3xs: 10px;
+  --padding-15xl: 34px;
+  --padding-13xl: 32px;
+  --padding-sm: 14px;
+  --padding-663xl: 682px;
+  --padding-338xl: 357px;
+  --padding-xs: 12px;
+
+  /* Border radiuses */
+  --br-xs: 12px;
+  --br-5xs: 8px;
+  --br-4xs: 9px;
+  --br-81xl: 100px;
+
+  /* Effects */
+  --button-shadow: 0px 4px 4px rgba(53, 66, 80, 0.1);
+}

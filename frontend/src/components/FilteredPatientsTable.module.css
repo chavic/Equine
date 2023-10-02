@@ -1,0 +1,89 @@
+.id {
+  width: 83px;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+.name {
+  width: 100px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+}
+.sex {
+  position: relative;
+  letter-spacing: 0.03em;
+  font-weight: 500;
+}
+.address,
+.admissiondate,
+.dob,
+.initials,
+.postalcode {
+  width: 93px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+}
+.address,
+.admissiondate,
+.dob,
+.postalcode {
+  width: 126px;
+}
+.admissiondate,
+.dob,
+.postalcode {
+  width: 137px;
+}
+.admissiondate,
+.dob {
+  width: 167px;
+}
+.dob {
+  width: 131px;
+}
+.ward {
+  width: 101px;
+}
+.patientstable,
+.tableheader,
+.tablerow,
+.textContainer,
+.ward {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+}
+.textContainer {
+  flex: 1;
+}
+.patientstable,
+.tableheader,
+.tablerow {
+  align-self: stretch;
+  background-color: var(--white);
+}
+.tableheader {
+  border-radius: var(--br-5xs) var(--br-5xs) 0 0;
+  border-bottom: 1px solid var(--light-blue);
+  padding: var(--padding-5xl) 0;
+}
+.patientstable,
+.tablerow {
+  padding: var(--padding-base) 0;
+}
+.patientstable {
+  border-radius: var(--br-xs);
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 0 0 var(--padding-5xl);
+  text-align: left;
+  font-size: var(--normal-paragraph-size);
+  color: var(--mid-darker-blue);
+  font-family: var(--normal-paragraph);
+}

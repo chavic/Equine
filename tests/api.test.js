@@ -15,6 +15,7 @@ describe('Patients API', () => {
           .end((err, res) => {
             expect(res).to.have.status(200);
             expect(res.body).to.be.an('array');
+            console.log(res.body)
             done();
           });
       });
@@ -30,6 +31,7 @@ describe('Patients API', () => {
             expect(res).to.have.status(200);
             expect(res.body).to.be.an('object');
             expect(res.body).to.have.property('PatientID', patientId);
+            console.log(res.body)
             done();
           });
       });
@@ -42,6 +44,7 @@ describe('Patients API', () => {
           .end((err, res) => {
             expect(res).to.have.status(404);
             expect(res.body).to.have.property('error', 'Patient not found');
+            console.log(res.body)
             done();
           });
       });
@@ -67,6 +70,7 @@ describe('Patients API', () => {
           .end((err, res) => {
             expect(res).to.have.status(201);
             expect(res.body).to.have.property('message', 'Patient created successfully');
+            console.log(res.body)
             done();
           });
       });
@@ -86,6 +90,7 @@ describe('Patients API', () => {
           .end((err, res) => {
             expect(res).to.have.status(200);
             expect(res.body).to.have.property('message', 'Patient updated successfully');
+            console.log(res.body)
             done();
           });
       });
@@ -100,6 +105,7 @@ describe('Patients API', () => {
           .end((err, res) => {
             expect(res).to.have.status(200);
             expect(res.body).to.have.property('message', 'Patient deleted successfully');
+            console.log(res.body)
             done();
           });
       });
@@ -115,6 +121,7 @@ describe('Patients API', () => {
           .end((err, res) => {
             expect(res).to.have.status(200);
             expect(res.body).to.be.an('array');
+            console.log(res.body)
             done();
           });
       });
@@ -130,6 +137,7 @@ describe('Patients API', () => {
             expect(res).to.have.status(200);
             expect(res.body).to.be.an('object');
             expect(res.body).to.have.property('WardID', wardId);
+            console.log(res.body)
             done();
           });
       });
@@ -142,6 +150,7 @@ describe('Patients API', () => {
           .end((err, res) => {
             expect(res).to.have.status(404);
             expect(res.body).to.have.property('error', 'Ward not found');
+            console.log(res.body)
             done();
           });
       });
@@ -162,6 +171,7 @@ describe('Patients API', () => {
           .end((err, res) => {
             expect(res).to.have.status(201);
             expect(res.body).to.have.property('message', 'Ward created successfully');
+            console.log(res.body)
             done();
           });
       });
@@ -181,6 +191,7 @@ describe('Patients API', () => {
           .end((err, res) => {
             expect(res).to.have.status(200);
             expect(res.body).to.have.property('message', 'Ward updated successfully');
+            console.log(res.body)
             done();
           });
       });
@@ -195,6 +206,7 @@ describe('Patients API', () => {
           .end((err, res) => {
             expect(res).to.have.status(200);
             expect(res.body).to.have.property('message', 'Ward deleted successfully');
+            console.log(res.body)
             done();
           });
       });

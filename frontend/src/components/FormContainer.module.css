@@ -1,0 +1,110 @@
+.id,
+.name {
+  width: 83px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+.name {
+  width: 173px;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+}
+.nurseInCharge {
+  position: relative;
+  letter-spacing: 0.03em;
+  font-weight: 500;
+}
+.admissiondate,
+.dob {
+  width: 207px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+}
+.dob {
+  width: 217px;
+}
+.ward {
+  width: 192px;
+}
+.tableheader,
+.tablerow,
+.textContainer,
+.ward {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+}
+.textContainer {
+  flex: 1;
+}
+.tableheader,
+.tablerow {
+  align-self: stretch;
+  background-color: var(--white);
+}
+.tableheader {
+  border-radius: var(--br-5xs) var(--br-5xs) 0 0;
+  border-bottom: 1px solid var(--light-blue);
+  padding: var(--padding-5xl) 0;
+}
+.tablerow {
+  padding: var(--padding-base) 0;
+}
+.id3 {
+  background-color: var(--light-blue);
+  width: 83px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+.name3 {
+  width: 173px;
+  display: flex;
+  align-items: flex-start;
+}
+.admissiondate2,
+.dob2,
+.name3 {
+  background-color: var(--light-blue);
+  flex-direction: row;
+  justify-content: center;
+}
+.admissiondate2 {
+  width: 207px;
+  display: flex;
+  align-items: flex-start;
+}
+.dob2 {
+  width: 217px;
+}
+.dob2,
+.ward2,
+.wardstable {
+  display: flex;
+  align-items: flex-start;
+}
+.ward2 {
+  background-color: var(--light-blue);
+  width: 192px;
+  flex-direction: row;
+  justify-content: center;
+}
+.wardstable {
+  align-self: stretch;
+  border-radius: var(--br-xs);
+  background-color: var(--white);
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 0 0 var(--padding-5xl);
+  text-align: left;
+  font-size: var(--normal-paragraph-size);
+  color: var(--mid-darker-blue);
+  font-family: var(--normal-paragraph);
+}

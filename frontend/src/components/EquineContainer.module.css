@@ -22,31 +22,35 @@
 .logocontainer {
   width: 280px;
   height: 160px;
-  font-size: 24px;
+  font-size: var(--font-size-5xl);
   color: var(--darker-blue);
   font-family: var(--font-roboto-serif);
 }
-.icontyl-pluslightboldhome {
+.icontylPluslightboldhome {
+  position: relative;
+  width: 24px;
+  height: 24px;
   display: none;
 }
-.home-icon,
-.icontyl-pluslightboldhome {
+.home,
+.homeIcon {
   position: relative;
+}
+.homeIcon {
   width: 24px;
   height: 24px;
 }
 .home {
-  position: relative;
   letter-spacing: 0.03em;
   font-weight: 500;
 }
 .homebtn,
-.icontyl-pluslightboldhome-parent {
+.icontylPluslightboldhomeParent {
   display: flex;
   flex-direction: row;
   align-items: center;
 }
-.icontyl-pluslightboldhome-parent {
+.icontylPluslightboldhomeParent {
   justify-content: center;
   gap: var(--gap-base);
 }
@@ -60,7 +64,7 @@
   box-sizing: border-box;
   color: var(--light-blue);
 }
-.users-icon {
+.usersIcon {
   position: relative;
   width: 26.9px;
   height: 24px;
@@ -86,14 +90,14 @@
   padding: var(--padding-3xs) var(--padding-15xl);
   gap: var(--gap-base);
 }
-.frame-child {
+.frameChild {
   align-self: stretch;
   position: relative;
   border-radius: var(--br-4xs);
   background-color: var(--light-blue);
   height: 1px;
 }
-.sidebar-inner {
+.sidebarInner {
   align-self: stretch;
   display: flex;
   flex-direction: column;
@@ -101,147 +105,44 @@
   justify-content: center;
   padding: 0 var(--padding-15xl);
 }
-.icontyl-pluslightboldadd-parent {
+.addpatientbtn,
+.icontylPluslightboldaddParent {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: flex-start;
+}
+.icontylPluslightboldaddParent {
   gap: var(--gap-base);
 }
-.actionbuttonscontainer,
 .addpatientbtn {
   align-self: stretch;
-  display: flex;
-  align-items: center;
-}
-.addpatientbtn {
   border-radius: var(--br-5xs);
   background-color: var(--black);
   height: 50px;
-  flex-direction: row;
-  justify-content: flex-start;
   padding: 0 var(--padding-13xl);
   box-sizing: border-box;
 }
-.actionbuttonscontainer {
-  flex: 1;
+.actionbuttonscontainer,
+.sidebar {
+  display: flex;
   flex-direction: column;
+}
+.actionbuttonscontainer {
+  align-self: stretch;
+  flex: 1;
+  align-items: center;
   justify-content: center;
   padding: var(--padding-3xs) var(--padding-15xl);
   gap: var(--gap-base);
   color: var(--white);
 }
-.frame-inner,
 .sidebar {
   background-color: var(--white);
-}
-.sidebar {
   width: 280px;
   height: 1024px;
-  display: flex;
-  flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
-}
-.frame-inner {
-  position: absolute;
-  margin: 0 !important;
-  top: 0;
-  left: 0;
-  border-radius: var(--br-5xs);
-  box-shadow: var(--button-shadow);
-  width: 48px;
-  height: 48px;
-  z-index: 0;
-}
-.search-icon {
-  position: relative;
-  width: 24px;
-  height: 24px;
-  z-index: 1;
-}
-.rectangle-parent {
-  width: 48px;
-  height: 48px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-}
-.find-patient-or {
-  position: relative;
-  letter-spacing: 0.03em;
-  font-weight: 500;
-  opacity: 0.25;
-}
-.text-input {
-  border-radius: var(--br-5xs);
-  background-color: var(--white);
-  box-shadow: var(--button-shadow);
-  width: 300px;
-  height: 45px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: center;
-  padding: 0 0 0 24px;
-  box-sizing: border-box;
-}
-.header-child {
-  flex: 1;
-}
-.header {
-  align-self: stretch;
-  height: 90px;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: flex-start;
-  gap: var(--gap-3xs);
-}
-.here-an-overview {
-  position: relative;
-  font-size: var(--normal-paragraph-size);
-  letter-spacing: 0.03em;
-  font-weight: 500;
-  color: var(--mid-darker-blue);
-}
-.greetings {
-  align-self: stretch;
-  height: 90px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: center;
-  gap: var(--gap-3xs);
-  font-size: 36px;
-  color: var(--darker-blue);
-}
-.dashboard {
-  align-self: stretch;
-  flex: 1;
-}
-.desktop-1,
-.main {
-  display: flex;
-  align-items: flex-start;
-  justify-content: flex-start;
-}
-.main {
-  align-self: stretch;
-  flex: 1;
-  flex-direction: column;
-  padding: 0 48px;
-  color: #000;
-}
-.desktop-1 {
-  position: relative;
-  background-color: var(--light-blue);
-  width: 100%;
-  height: 1024px;
-  overflow: hidden;
-  flex-direction: row;
   text-align: left;
   font-size: var(--normal-paragraph-size);
   color: var(--black);

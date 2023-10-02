@@ -1,4 +1,23 @@
-function fetchPatients() {
+export interface Patient {
+    PatientID: string;
+    Name: string;
+    Initials?: string;
+    Sex: 'M' | 'F';
+    Address?: string;
+    PostCode?: string;
+    AdmissionDate?: Date;
+    DOB?: Date;
+    WardID: string;
+  }
+  
+ export interface Ward {
+    WardID: string;
+    WardName: string;
+    NumberBeds?: number;
+    NurseInCharge: string;
+  }
+
+export function fetchPatients() {
     return fetch('/api/patients')
         .then(response => response.json())
         .catch(error => {
@@ -7,7 +26,7 @@ function fetchPatients() {
         });
 }
 
-function fetchPatientById(patientId) {
+export function fetchPatientById(patientId: string) {
     return fetch(`/api/patients/${patientId}`)
         .then(response => {
             if (response.status === 404) {
@@ -21,7 +40,7 @@ function fetchPatientById(patientId) {
         });
 }
 
-function createPatient(newPatient) {
+export function createPatient(newPatient: Patient) {
     return fetch('/api/patients', {
         method: 'POST',
         headers: {
@@ -41,7 +60,7 @@ function createPatient(newPatient) {
     });
 }
 
-function updatePatient(patientId, updatedPatient) {
+export function updatePatient(patientId: string, updatedPatient: Patient) {
     return fetch(`/api/patients/${patientId}`, {
         method: 'PUT',
         headers: {
@@ -61,7 +80,7 @@ function updatePatient(patientId, updatedPatient) {
     });
 }
 
-function deletePatient(patientId) {
+export function deletePatient(patientId: string) {
     return fetch(`/api/patients/${patientId}`, {
         method: 'DELETE',
     })
@@ -77,7 +96,7 @@ function deletePatient(patientId) {
     });
 }
 
-function fetchWards() {
+export function fetchWards() {
     return fetch('/api/wards')
         .then(response => response.json())
         .catch(error => {
@@ -86,7 +105,7 @@ function fetchWards() {
         });
 }
 
-function fetchWardById(wardId) {
+export function fetchWardById(wardId: string) {
     return fetch(`/api/wards/${wardId}`)
         .then(response => {
             if (response.status === 404) {
@@ -100,7 +119,7 @@ function fetchWardById(wardId) {
         });
 }
 
-function createWard(newWard) {
+export function createWard(newWard: Ward) {
     return fetch('/api/wards', {
         method: 'POST',
         headers: {
@@ -120,7 +139,7 @@ function createWard(newWard) {
     });
 }
 
-function updateWard(wardId, updatedWard) {
+export function updateWard(wardId: string, updatedWard: Ward) {
     return fetch(`/api/wards/${wardId}`, {
         method: 'PUT',
         headers: {
@@ -140,7 +159,7 @@ function updateWard(wardId, updatedWard) {
     });
 }
 
-function deleteWard(wardId) {
+export function deleteWard(wardId: string) {
     return fetch(`/api/wards/${wardId}`, {
         method: 'DELETE',
     })
