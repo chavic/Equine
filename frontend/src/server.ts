@@ -1,24 +1,9 @@
-export interface Patient {
-    PatientID: string;
-    Name: string;
-    Initials?: string;
-    Sex: 'M' | 'F';
-    Address?: string;
-    PostCode?: string;
-    AdmissionDate?: Date;
-    DOB?: Date;
-    WardID: string;
-  }
-  
- export interface Ward {
-    WardID: string;
-    WardName: string;
-    NumberBeds?: number;
-    NurseInCharge: string;
-  }
+import {Patient, Ward} from "./models";
+
+let serverUrl = "http://localhost:3000";
 
 export function fetchPatients() {
-    return fetch('/api/patients')
+    return fetch(serverUrl + '/api/patients')
         .then(response => response.json())
         .catch(error => {
             console.error('Error fetching patients:', error);
@@ -41,7 +26,7 @@ export function fetchPatientById(patientId: string) {
 }
 
 export function createPatient(newPatient: Patient) {
-    return fetch('/api/patients', {
+    return fetch(serverUrl + '/api/patients', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -97,7 +82,7 @@ export function deletePatient(patientId: string) {
 }
 
 export function fetchWards() {
-    return fetch('/api/wards')
+    return fetch(serverUrl + '/api/wards')
         .then(response => response.json())
         .catch(error => {
             console.error('Error fetching wards:', error);
@@ -120,7 +105,7 @@ export function fetchWardById(wardId: string) {
 }
 
 export function createWard(newWard: Ward) {
-    return fetch('/api/wards', {
+    return fetch(serverUrl + '/api/wards', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
