@@ -242,12 +242,6 @@ describe('Admin Functions', () => {
 
   });
 
-
-
-
-
-  ///
-
   describe('Delete User Account and Associated Data', () => {
     let adminToken;
     let adminUserID;
@@ -405,36 +399,12 @@ describe('Admin Functions', () => {
   
   
     after((done) => {
-      // Clean up any data created during the tests, if needed
-      // For example, you can delete the non-admin user created for testing
-      // and any other data that may have been created.
-
+ 
       done();
     });
   });
-  
-
-
-
-
-
-
-
-
-///
-
-
-
-
-
-
-
-
-
 
 });
-
-
 
 describe('Patients API', () => {
     describe('GET /api/patients', () => {
