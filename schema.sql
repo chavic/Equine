@@ -35,7 +35,7 @@ CREATE TABLE Doctors (
     Name VARCHAR(50) NOT NULL,
     Specialization VARCHAR(50),
     UserID INT UNIQUE,
-    FOREIGN KEY (UserID) REFERENCES Users(UserID)
+    FOREIGN KEY (UserID) REFERENCES Users(UserID) ON DELETE CASCADE
 );
 
 -- Nurses table with foreign key reference to Users
@@ -43,7 +43,7 @@ CREATE TABLE Nurses (
     NurseID VARCHAR(5) PRIMARY KEY,
     Name VARCHAR(50) NOT NULL,
     UserID INT UNIQUE,
-    FOREIGN KEY (UserID) REFERENCES Users(UserID)
+    FOREIGN KEY (UserID) REFERENCES Users(UserID)  ON DELETE CASCADE
 );
 
 -- Appointments table with foreign key references to Patients and Doctors

@@ -1,7 +1,10 @@
 const express = require('express');
+const cors = require('cors')
 const app = express();
 const port = 3000;
+const jwt = require('jsonwebtoken');
 
+app.use(cors())
 app.use(express.json());
 app.use(express.static('frontend'));
 
@@ -13,6 +16,8 @@ const db = mysql.createConnection({
   database: 'hospital',
 });
 
+const secretKey = "some secret key";
+
 db.connect((err) => {
   if (err) {
     console.error('Database connection failed:', err);
@@ -21,7 +26,284 @@ db.connect((err) => {
   }
 });
 
-// Patients
+function generateToken(user) {
+  return jwt.sign(user, secretKey, { expiresIn: '1h'  });
+}
+
+function generateRandomPassword(length = 10) {
+  const charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+  const password = [];
+
+  for (let i = 0; i < length; i++) {
+    const randomIndex = Math.floor(Math.random() * charset.length);
+    password.push(charset[randomIndex]);
+  }
+
+  return password.join('');
+}
+
+function verifyToken(req, res, next) {
+  const token = req.header('Authorization').slice(7);
+  if (!token) {
+    return res.status(403).json({ message: 'Access denied. No token provided.' });
+  }
+
+  jwt.verify(token, secretKey, (err, user) => {
+    if (err) {
+      return res.status(401).json({ message: 'Invalid token.' });
+    }
+    req.user = user;
+    next();
+  });
+}
+
+
+app.post('/signin', (req, res) => {
+  const { username, password } = req.body;
+
+  db.query(
+    'SELECT * FROM Users WHERE Username = ?',
+    [username],
+    (err, results) => {
+      if (err) {
+        console.error('Database error:', err);
+        return res.status(500).json({ message: 'Internal server error' });
+      }
+
+      if (results.length === 0) {
+        return res.status(401).json({ message: 'Authentication failed. User not found.' });
+      }
+
+      const user = results[0];
+
+
+      if (user.PasswordHash === password) {
+        const token = generateToken({ userID: user.UserID, username: user.Username, role: user.Role });
+        res.json({ token });
+      } else {
+        res.status(401).json({ message: 'Authentication failed. Incorrect password.' });
+      }
+    }
+  );
+});
+
+
+app.post('/signup', (req, res) => {
+  const { username, password, role } = req.body;
+
+  db.query(
+    'SELECT * FROM Users WHERE Username = ?',
+    [username],
+    (err, results) => {
+      if (err) {
+        console.error('Database error:', err);
+        return res.status(500).json({ message: 'Internal server error' });
+      }
+
+      if (results.length > 0) {
+        return res.status(400).json({ message: 'User already exists. Please choose a different username.' });
+      }
+     
+      db.query(
+        'INSERT INTO Users (Username, PasswordHash, Role) VALUES (?, ?, ?)',
+        [username, password, role],
+        (err, result) => {
+          if (err) {
+            console.error('Database error:', err);
+            return res.status(500).json({ message: 'Internal server error' });
+          }
+
+          const token = generateToken({ userID: result.insertId, username: username, role });
+         
+          res.status(201).json({ message: 'User created successfully.', token,  userID: result.insertId });
+        }
+      );
+    }
+  );
+});
+
+
+app.put('/change-role/:userID', verifyToken, (req, res) => {
+  const { userID } = req.params;
+  const { newRole } = req.body;
+
+  if (req.user.role !== 'Admin') {
+    return res.status(403).json({ message: 'Permission denied. Only Admins can change roles.' });
+  }
+
+  db.query(
+    'UPDATE Users SET Role = ? WHERE UserID = ?',
+    [newRole, userID],
+    (err) => {
+      if (err) {
+        console.error('Database error:', err);
+        return res.status(500).json({ message: 'Internal server error' });
+      }
+      res.json({ message: 'User role updated successfully' });
+    }
+  );
+});
+
+
+app.post('/create-user', verifyToken, (req, res) => {
+  
+  if (req.user.role !== 'Admin') {
+    return res.status(403).json({ message: 'Permission denied. Only Admins can create users.' });
+  }
+
+  const { username, password, role, doctorData, nurseData } = req.body;
+
+  
+  const generatedPassword = generateRandomPassword(); 
+
+  
+  db.query(
+    'INSERT INTO Users (Username, PasswordHash, Role) VALUES (?, ?, ?)',
+    [username, generatedPassword, role],
+    (err, result) => {
+      if (err) {
+        console.error('Database error:', err);
+        return res.status(500).json({ message: 'Internal server error' });
+      }
+
+      const userID = result.insertId;
+
+      
+      if (role === 'Doctor' && doctorData) {
+        const { name, specialization } = doctorData;
+
+        
+        db.query(
+          'INSERT INTO Doctors (DoctorID, Name, Specialization, UserID) VALUES (?, ?, ?, ?)',
+          [`d${userID}`, name, specialization, userID],
+          (err) => {
+            if (err) {
+              console.error('Database error:', err);
+              return res.status(500).json({ message: 'Internal server error' });
+            }
+          }
+        );
+      }
+
+      
+      if (role === 'Nurse' && nurseData) {
+        const { name } = nurseData;
+
+        
+        db.query(
+          'INSERT INTO Nurses (NurseID, Name, UserID) VALUES (?, ?, ?)',
+          [`n${userID}`, name, userID],
+          (err) => {
+            if (err) {
+              console.error('Database error:', err);
+              return res.status(500).json({ message: 'Internal server error' });
+            }
+          }
+        );
+      }
+
+      res.json({ message: 'User created successfully', generatedPassword, userID });
+    }
+  );
+});
+
+app.delete('/delete-account/:userID', verifyToken, (req, res) => {
+  const { userID } = req.params;
+  
+  if (req.user.role !== 'Admin' && req.user.userID !== userID) {
+    return res.status(403).json({ message: 'Permission denied. Only Admins or the user can delete this account.' });
+  }
+
+  
+  db.query('SELECT Role FROM Users WHERE UserID = ?', [userID], (err, results) => {
+    if (err) {
+      console.error('Database error:', err);
+      return res.status(500).json({ message: 'Internal server error' });
+    }
+
+    const userRole = results[0].Role;
+
+    
+    db.beginTransaction((transactionErr) => {
+      if (transactionErr) {
+        console.error('Database error:', transactionErr);
+        return res.status(500).json({ message: 'Internal server error' });
+      }
+
+      
+      db.query('DELETE FROM Users WHERE UserID = ?', [userID], (deleteErr) => {
+        if (deleteErr) {
+          return db.rollback(() => {
+            console.error('Database error:', deleteErr);
+            return res.status(500).json({ message: 'Internal server error' });
+          });
+        }
+
+        
+        if (userRole === 'Doctor') {
+          db.query('DELETE FROM Doctors WHERE UserID = ?', [userID], (doctorDeleteErr) => {
+            if (doctorDeleteErr) {
+              return db.rollback(() => {
+                console.error('Database error:', doctorDeleteErr);
+                return res.status(500).json({ message: 'Internal server error' });
+              });
+            }
+
+            commitTransaction();
+          });
+        } else if (userRole === 'Nurse') {
+          db.query('DELETE FROM Nurses WHERE UserID = ?', [userID], (nurseDeleteErr) => {
+            if (nurseDeleteErr) {
+              return db.rollback(() => {
+                console.error('Database error:', nurseDeleteErr);
+                return res.status(500).json({ message: 'Internal server error' });
+              });
+            }
+
+            commitTransaction();
+          });
+        } else if (userRole === 'Receptionist') {
+          
+          db.query('DELETE FROM ReceptionistTable WHERE UserID = ?', [userID], (receptionistDeleteErr) => {
+            if (receptionistDeleteErr) {
+              return db.rollback(() => {
+                console.error('Database error:', receptionistDeleteErr);
+                return res.status(500).json({ message: 'Internal server error' });
+              });
+            }
+
+            commitTransaction();
+          });
+        } else {
+          
+          commitTransaction();
+        }
+      });
+    });
+
+    function commitTransaction() {
+      
+      db.commit((commitErr) => {
+        if (commitErr) {
+          return db.rollback(() => {
+            console.error('Database error:', commitErr);
+            return res.status(500).json({ message: 'Internal server error' });
+          });
+        }
+
+        res.json({ message: 'User account and associated data deleted successfully' });
+      });
+    }
+  });
+});
+
+
+
+app.get('/secure-route', verifyToken, (req, res) => {
+  res.json({ message: 'This is a secure route. You have access.' });
+});
+
+
 app.get('/api/patients', (req, res) => {
     db.query('SELECT * FROM Patients', (err, results) => {
       if (err) {
@@ -86,7 +368,7 @@ app.get('/api/patients', (req, res) => {
     });
   });
 
-// Wards
+
 app.get('/api/wards', (req, res) => {
     db.query('SELECT * FROM Wards', (err, results) => {
       if (err) {
@@ -126,7 +408,6 @@ app.post('/api/wards', (req, res) => {
     });
   });
 
-// Update a ward by ID
 app.put('/api/wards/:id', (req, res) => {
     const wardId = req.params.id;
     const updatedWard = req.body; 
@@ -152,7 +433,7 @@ app.delete('/api/wards/:id', (req, res) => {
     });
   });
 
-// Doctors
+
 app.get('/api/doctors', (req, res) => {
     db.query('SELECT * FROM Doctors', (err, results) => {
       if (err) {
@@ -202,7 +483,7 @@ app.get('/api/doctors', (req, res) => {
     });
   });
 
-// Nurses
+
 app.get('/api/nurses', (req, res) => {
     db.query('SELECT * FROM Nurses', (err, results) => {
       if (err) {
@@ -251,7 +532,7 @@ app.get('/api/nurses', (req, res) => {
     });
   });
 
-// Appointments
+
 app.get('/api/appointments', (req, res) => {
     db.query('SELECT * FROM Appointments', (err, results) => {
       if (err) {
@@ -300,7 +581,7 @@ app.get('/api/appointments', (req, res) => {
     });
   });
 
-// Billing Records
+
 app.get('/api/billing', (req, res) => {
     db.query('SELECT * FROM Billing', (err, results) => {
       if (err) {
@@ -349,7 +630,7 @@ app.post('/api/billing', (req, res) => {
     });
   });
 
-// Medical Records
+
 app.get('/api/medicalrecords', (req, res) => {
     db.query('SELECT * FROM MedicalRecords', (err, results) => {
       if (err) {
@@ -402,4 +683,4 @@ app.listen(port, () => {
   console.log(`Server is listening on port ${port}`);
 });
 
-module.exports = app;
+module.exports = {app, db};
