@@ -8,13 +8,11 @@ const Home: FunctionComponent = () => {
   return (
     <div className={styles.home}>
       <EquineContainer
-        dimensions="/25848008227681.svg"
+        dimensions="/2584800822768.svg"
         imageDimensions="/icontyl-pluslightboldhome.svg"
         imageSize="/home.svg"
-        imageDimensionsText="/users1.svg"
+        imageDimensionsText="/users.svg"
         imageDimensionsText2="/map.svg"
-        imageDimensionsText3="/object--align--down.svg"
-        imageDimensionsText4="/notification.svg"
         imageDimensionsText5="/folders.svg"
         imageDimensions2="/user-outline.svg"
         imageDimensionsText6="/settings.svg"
@@ -22,7 +20,7 @@ const Home: FunctionComponent = () => {
         wardsBtnColor="#050505"
       />
       <div className={styles.main}>
-        <Header iconCode="/search1.svg" iconTextCode="/group-21.svg" />
+        <Header iconCode="/search.svg" />
         <div className={styles.greetings}>
           <div className={styles.goodMorningGeorge}>Good Morning, George</div>
           <div className={styles.hereAnOverview}>

@@ -117,67 +117,66 @@ const ScheduleForm: FunctionComponent = () => {
             <div className={styles.upcomingEventsWrapper}>
               <div className={styles.sun}>Upcoming Events</div>
             </div>
-            <div className={styles.groupWrapper}>
-              <div className={styles.groupParent}>
+            <div className={styles.frameWrapper}>
+              <div className={styles.frameGroup}>
                 <div className={styles.parent}>
-                  <div className={styles.div12}>10:00</div>
-                  <div className={styles.div13}>11:00</div>
-                  <div className={styles.div14}>12:00</div>
-                  <div className={styles.div15}>13:00</div>
-                  <div className={styles.div16}>14:00</div>
-                  <div className={styles.div17}>15:00</div>
-                  <div className={styles.div18}>16:00</div>
-                  <div className={styles.div19}>17:00</div>
-                  <div className={styles.div20}>18:00</div>
-                  <div className={styles.div21}>9:00</div>
+                  <div className={styles.sun}>9:00</div>
+                  <div className={styles.sun}>10:00</div>
+                  <div className={styles.sun}>11:00</div>
+                  <div className={styles.div15}>12:00</div>
+                  <div className={styles.sun}>13:00</div>
+                  <div className={styles.sun}>14:00</div>
+                  <div className={styles.sun}>15:00</div>
+                  <div className={styles.sun}>16:00</div>
+                  <div className={styles.sun}>17:00</div>
+                  <div className={styles.sun}>18:00</div>
                 </div>
                 <div className={styles.rectangleParent}>
-                  <div className={styles.groupChild} />
-                  <div className={styles.groupItem} />
-                  <div className={styles.groupInner} />
+                  <div className={styles.frameChild} />
+                  <div className={styles.frameItem} />
+                  <div className={styles.frameInner} />
                   <div className={styles.rectangleDiv} />
-                  <div className={styles.groupChild1} />
-                  <div className={styles.groupChild2} />
-                  <div className={styles.groupChild3} />
-                  <div className={styles.groupChild4} />
-                  <div className={styles.groupChild5} />
-                  <div className={styles.groupChild6} />
-                  <div className={styles.groupChild7} />
-                  <div className={styles.groupChild8} />
-                  <div className={styles.groupChild9} />
-                  <div className={styles.groupChild10} />
-                  <div className={styles.groupChild11} />
-                  <div className={styles.groupChild12} />
-                  <div className={styles.groupChild13} />
-                  <div className={styles.groupChild14} />
-                  <div className={styles.groupChild15} />
-                  <div className={styles.groupChild16} />
-                  <div className={styles.groupChild17} />
-                  <div className={styles.groupChild18} />
-                  <div className={styles.groupChild19} />
-                  <div className={styles.groupChild20} />
-                  <div className={styles.groupChild21} />
-                  <div className={styles.groupChild22} />
-                  <div className={styles.groupChild23} />
-                  <div className={styles.groupChild24} />
-                  <div className={styles.groupChild25} />
-                  <div className={styles.groupChild26} />
-                  <div className={styles.groupChild27} />
-                  <div className={styles.groupChild28} />
-                  <div className={styles.groupChild29} />
-                  <div className={styles.groupChild30} />
-                  <div className={styles.groupChild31} />
-                  <div className={styles.groupChild32} />
-                  <div className={styles.groupChild29} />
-                  <div className={styles.groupChild34} />
+                  <div className={styles.frameChild1} />
+                  <div className={styles.frameChild2} />
+                  <div className={styles.frameChild3} />
+                  <div className={styles.frameChild4} />
+                  <div className={styles.frameChild5} />
+                  <div className={styles.frameChild6} />
+                  <div className={styles.frameChild7} />
+                  <div className={styles.frameChild8} />
+                  <div className={styles.frameChild9} />
+                  <div className={styles.frameChild10} />
+                  <div className={styles.frameChild11} />
+                  <div className={styles.frameChild12} />
+                  <div className={styles.frameChild13} />
+                  <div className={styles.frameChild14} />
+                  <div className={styles.frameChild15} />
+                  <div className={styles.frameChild16} />
+                  <div className={styles.frameChild17} />
+                  <div className={styles.frameChild18} />
+                  <div className={styles.frameChild19} />
+                  <div className={styles.frameChild20} />
+                  <div className={styles.frameChild21} />
+                  <div className={styles.frameChild22} />
+                  <div className={styles.frameChild23} />
+                  <div className={styles.frameChild24} />
+                  <div className={styles.frameChild25} />
+                  <div className={styles.frameChild26} />
+                  <div className={styles.frameChild27} />
+                  <div className={styles.frameChild28} />
+                  <div className={styles.frameChild29} />
+                  <div className={styles.frameChild30} />
+                  <div className={styles.frameChild31} />
+                  <div className={styles.frameChild32} />
+                  <div className={styles.frame} />
                 </div>
               </div>
             </div>
           </div>
         </div>
         <div className={styles.events}>
-          <div className={styles.frameGroup}>
-            <div className={styles.groupContainer}>
+          <div className={styles.frameContainer}>
+            <div className={styles.frameDiv}>
               <div className={styles.vectorParent}>
                 <img
                   className={styles.rectangleIcon}
@@ -195,11 +194,10 @@ const ScheduleForm: FunctionComponent = () => {
               See Mr Sikasote for he’s consulting about the product.
             </div>
           </div>
-          <div className={styles.frameGroup}>
-            <div className={styles.groupContainer}>
-              <div className={styles.vectorParent}>
-                <div className={styles.groupChild35} />
-                <div className={styles.cs}>VC</div>
+          <div className={styles.frameContainer}>
+            <div className={styles.frameDiv}>
+              <div className={styles.vcWrapper}>
+                <div className={styles.sun}>VC</div>
               </div>
               <div className={styles.claytonSSirnameParent}>
                 <div className={styles.sun}>Victor C. Sirname</div>
@@ -214,27 +212,20 @@ const ScheduleForm: FunctionComponent = () => {
         <div className={styles.timesheet}>
           <div className={styles.event}>
             <div className={styles.tile}>
-              <div className={styles.tileChild} />
-              <div className={styles.medicalProductConsulting}>
-                Medical Product Consulting
-              </div>
+              <div className={styles.sun}>Medical Product Consulting</div>
               <div className={styles.div22}>12:00 - 13:00</div>
             </div>
           </div>
           <div className={styles.event1}>
             <div className={styles.tile}>
-              <div className={styles.tileChild} />
-              <div className={styles.medicalProductConsulting}>
-                Enhancement Procedure
-              </div>
+              <div className={styles.sun}>Enhancement Procedure</div>
               <div className={styles.div22}>13:00 - 17:00</div>
             </div>
           </div>
           <div className={styles.event2}>
             <div className={styles.tile2}>
-              <div className={styles.tileInner} />
-              <div className={styles.closeMeeting}>Close Meeting</div>
-              <div className={styles.div24}>17:00 - 18:30</div>
+              <div className={styles.sun}>Close Meeting</div>
+              <div className={styles.div22}>17:00 - 18:30</div>
             </div>
           </div>
         </div>

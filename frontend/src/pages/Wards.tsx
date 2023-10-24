@@ -13,8 +13,7 @@ const Wards: FunctionComponent = () => {
         imageSize="/home.svg"
         imageDimensionsText="/users.svg"
         imageDimensionsText2="/map.svg"
-        imageDimensionsText3="/object--align--down.svg"
-        imageDimensionsText4="/notification.svg"
+        imageDimensionsText3="/object--align--down1.svg"
         imageDimensionsText5="/folders.svg"
         imageDimensions2="/user-outline.svg"
         imageDimensionsText6="/settings.svg"
@@ -22,7 +21,7 @@ const Wards: FunctionComponent = () => {
         wardsBtnColor="#050505"
       />
       <div className={styles.main}>
-        <Header iconCode="/search.svg" iconTextCode="/group-2.svg" />
+        <Header iconCode="/search.svg" />
         <div className={styles.greetings}>
           <div className={styles.wards1}>Wards</div>
         </div>

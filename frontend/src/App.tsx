@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import {
   Routes,
   Route,
@@ -5,13 +6,13 @@ import {
   useLocation,
 } from "react-router-dom";
 import Home from "./pages/Home";
+import Settings from "./pages/Settings";
+import SiginIn from "./pages/SiginIn";
+import ChangeHistory from "./pages/ChangeHistory";
 import Wards from "./pages/Wards";
 import Patients from "./pages/Patients";
-import Settings from "./pages/Settings";
-import ChangeHistory from "./pages/ChangeHistory";
 import Notifications from "./pages/Notifications";
 import Statistics from "./pages/Statistics";
-import { useEffect } from "react";
 
 function App() {
   const action = useNavigationType();
@@ -30,31 +31,35 @@ function App() {
 
     switch (pathname) {
       case "/":
-        title = "";
-        metaDescription = "";
-        break;
-      case "/wards":
-        title = "";
-        metaDescription = "";
-        break;
-      case "/patients":
-        title = "";
+        title = "Overview";
         metaDescription = "";
         break;
       case "/settings":
-        title = "";
+        title = "Settings";
+        metaDescription = "";
+        break;
+      case "/siginin":
+        title = "Sign In";
         metaDescription = "";
         break;
       case "/change-history":
-        title = "";
+        title = "Change History";
+        metaDescription = "";
+        break;
+      case "/wards":
+        title = "Wards";
+        metaDescription = "";
+        break;
+      case "/patients":
+        title = "Patients";
         metaDescription = "";
         break;
       case "/notifications":
-        title = "";
+        title = "Notifications";
         metaDescription = "";
         break;
       case "/statistics":
-        title = "";
+        title = "Statistics";
         metaDescription = "";
         break;
     }
@@ -76,10 +81,11 @@ function App() {
   return (
     <Routes>
       <Route path="/" element={<Home />} />
+      <Route path="/settings" element={<Settings />} />
+      <Route path="/siginin" element={<SiginIn />} />
+      <Route path="/change-history" element={<ChangeHistory />} />
       <Route path="/wards" element={<Wards />} />
       <Route path="/patients" element={<Patients />} />
-      <Route path="/settings" element={<Settings />} />
-      <Route path="/change-history" element={<ChangeHistory />} />
       <Route path="/notifications" element={<Notifications />} />
       <Route path="/statistics" element={<Statistics />} />
     </Routes>

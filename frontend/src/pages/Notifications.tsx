@@ -12,7 +12,7 @@ const Notifications: FunctionComponent = () => {
         imageSize="/home1.svg"
         imageDimensionsText="/users5.svg"
         imageDimensionsText2="/map1.svg"
-        imageDimensionsText3="/object--align--down1.svg"
+        imageDimensionsText3="/object--align--down11.svg"
         imageDimensionsText4="/notification1.svg"
         imageDimensionsText5="/folders1.svg"
         imageDimensions2="/user-outline1.svg"

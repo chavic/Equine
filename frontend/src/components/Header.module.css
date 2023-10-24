@@ -1,29 +1,18 @@
-.frameChild {
-  position: absolute;
-  margin: 0 !important;
-  top: 0;
-  left: 0;
-  border-radius: var(--br-5xs);
-  background-color: var(--white);
-  box-shadow: var(--button-shadow);
-  width: 48px;
-  height: 48px;
-  z-index: 0;
-}
 .searchIcon {
   position: relative;
   width: 24px;
   height: 24px;
-  z-index: 1;
 }
-.rectangleParent {
+.searchbtn {
+  border-radius: var(--br-5xs);
+  background-color: var(--white);
+  box-shadow: var(--button-shadow);
   width: 48px;
   height: 48px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  position: relative;
 }
 .findPatientWard {
   position: relative;
@@ -54,40 +43,6 @@
   flex: 1;
   height: 61px;
 }
-.groupChild {
-  top: 2px;
-  left: 0;
-  border-radius: var(--br-5xs);
-  background-color: var(--mid-darker-blue);
-  width: 42px;
-  height: 42px;
-}
-.gr,
-.groupChild,
-.groupItem {
-  position: absolute;
-}
-.groupItem {
-  top: 0;
-  left: 33px;
-  border-radius: 50%;
-  background-color: var(--white);
-  border: 3px solid var(--light-blue);
-  box-sizing: border-box;
-  width: 14px;
-  height: 14px;
-}
-.gr {
-  top: 14px;
-  left: 10px;
-  letter-spacing: 0.03em;
-  font-weight: 500;
-}
-.rectangleGroup {
-  position: relative;
-  width: 47px;
-  height: 44px;
-}
 .georgeRune,
 .gruneequinemed {
   position: relative;
@@ -102,18 +57,62 @@
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
-  color: var(--darker-blue);
 }
-.profileChild {
+.frame,
+.icontylPluslightbolddown {
   position: relative;
   width: 16px;
   height: 16px;
 }
+.frame {
+  border-radius: var(--br-5xs);
+  background-color: var(--mid-darker-blue);
+  width: 42px;
+  height: 42px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.gr {
+  position: undefined;
+  letter-spacing: 0.03em;
+  font-weight: 500;
+  display: inline-block;
+  width: 31px;
+  margin-top: 14px;
+}
+.frameChild {
+  position: relative;
+  border-radius: 50%;
+  background-color: var(--white);
+  border: 3px solid var(--light-blue);
+  box-sizing: border-box;
+  width: 14px;
+  height: 14px;
+}
+.frame1 {
+  width: 37px;
+  height: 31px;
+  overflow: hidden;
+  flex-shrink: 0;
+  align-items: flex-start;
+  gap: var(--gap-11xs);
+  margin-left: -32px;
+}
+.frame1,
+.frameParent,
 .profile1 {
   display: flex;
   flex-direction: row;
-  align-items: center;
   justify-content: flex-start;
+}
+.frameParent {
+  width: 47px;
+  height: 44px;
+  align-items: flex-start;
+  color: var(--black);
+}
+.profile1 {
+  align-items: center;
   gap: var(--gap-xs);
 }
 .header,
@@ -123,7 +122,7 @@
   align-items: flex-start;
   justify-content: center;
   font-size: var(--font-size-sm);
-  color: var(--black);
+  color: var(--darker-blue);
 }
 .header {
   align-self: stretch;

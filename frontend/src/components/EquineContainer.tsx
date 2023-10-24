@@ -32,7 +32,7 @@ const EquineContainer: FunctionComponent<EquineContainerType> = ({
   frameDivBackgroundColor,
   wardsBtnColor,
 }) => {
-  const patientsBtnStyle: CSSProperties = useMemo(() => {
+  const largeBtnStyle: CSSProperties = useMemo(() => {
     return {
       backgroundColor: frameDivBackgroundColor,
     };
@@ -53,7 +53,7 @@ const EquineContainer: FunctionComponent<EquineContainerType> = ({
         </div>
       </div>
       <div className={styles.pagebuttonscontainer}>
-        <div className={styles.homebtn}>
+        <div className={styles.largebtn}>
           <div className={styles.icontylPluslightboldhomeParent}>
             <img
               className={styles.icontylPluslightboldhome}
@@ -64,7 +64,7 @@ const EquineContainer: FunctionComponent<EquineContainerType> = ({
             <div className={styles.home}>Home</div>
           </div>
         </div>
-        <div className={styles.patientsbtn} style={patientsBtnStyle}>
+        <div className={styles.largebtn1} style={largeBtnStyle}>
           <div className={styles.icontylPluslightboldhomeParent}>
             <img
               className={styles.usersIcon}
@@ -76,7 +76,7 @@ const EquineContainer: FunctionComponent<EquineContainerType> = ({
             </div>
           </div>
         </div>
-        <div className={styles.patientsbtn}>
+        <div className={styles.largebtn1}>
           <div className={styles.icontylPluslightboldhomeParent}>
             <img
               className={styles.homeIcon}
@@ -86,22 +86,12 @@ const EquineContainer: FunctionComponent<EquineContainerType> = ({
             <div className={styles.home}>Wards</div>
           </div>
         </div>
-        <div className={styles.patientsbtn}>
-          <div className={styles.icontylPluslightboldhomeParent}>
-            <img
-              className={styles.homeIcon}
-              alt=""
-              src={imageDimensionsText3}
-            />
-            <div className={styles.home}>Statistics</div>
-          </div>
-        </div>
       </div>
       <div className={styles.sidebarInner}>
         <div className={styles.frameChild} />
       </div>
       <div className={styles.actionbuttonscontainer}>
-        <div className={styles.addpatientbtn}>
+        <div className={styles.largebtn3}>
           <div className={styles.icontylPluslightboldaddParent}>
             <img
               className={styles.homeIcon}
@@ -111,7 +101,7 @@ const EquineContainer: FunctionComponent<EquineContainerType> = ({
             <div className={styles.home}>Add Patient</div>
           </div>
         </div>
-        <div className={styles.addpatientbtn}>
+        <div className={styles.largebtn3}>
           <div className={styles.icontylPluslightboldhomeParent}>
             <img
               className={styles.homeIcon}
@@ -126,17 +116,7 @@ const EquineContainer: FunctionComponent<EquineContainerType> = ({
         <div className={styles.frameChild} />
       </div>
       <div className={styles.pagebuttonscontainer}>
-        <div className={styles.patientsbtn}>
-          <div className={styles.icontylPluslightboldhomeParent}>
-            <img
-              className={styles.homeIcon}
-              alt=""
-              src={imageDimensionsText4}
-            />
-            <div className={styles.home}>Notifications</div>
-          </div>
-        </div>
-        <div className={styles.patientsbtn}>
+        <div className={styles.largebtn1}>
           <div className={styles.icontylPluslightboldhomeParent}>
             <img
               className={styles.homeIcon}
@@ -146,7 +126,7 @@ const EquineContainer: FunctionComponent<EquineContainerType> = ({
             <div className={styles.home}>Change History</div>
           </div>
         </div>
-        <div className={styles.patientsbtn}>
+        <div className={styles.largebtn1}>
           <div className={styles.icontylPluslightboldhomeParent}>
             <img
               className={styles.icontylPluslightboldhome}
