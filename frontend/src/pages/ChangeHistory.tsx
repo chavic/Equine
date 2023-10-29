@@ -1,15 +1,15 @@
 import { FunctionComponent } from "react";
 import EquineFormContainer from "../components/EquineFormContainer";
-import MainHeader from "../components/MainHeader";
 import FormContainer1 from "../components/FormContainer1";
 import styles from "./ChangeHistory.module.css";
+import Header from "../components/Header";
 
 const ChangeHistory: FunctionComponent = () => {
   return (
     <div className={styles.changeHistory}>
       <EquineFormContainer />
       <div className={styles.main}>
-        <MainHeader />
+        <Header />
         <div className={styles.greetings}>
           <div className={styles.changeHistory1}>Change History</div>
         </div>
