@@ -1,8 +1,8 @@
 import { FunctionComponent } from "react";
 import FormContainer2 from "../components/FormContainer2";
-import MainHeader from "../components/MainHeader";
 import AccountSettingsForm from "../components/AccountSettingsForm";
 import styles from "./Settings.module.css";
+import Header from "../components/Header";
 
 const Settings: FunctionComponent = () => {
   return (
@@ -13,7 +13,7 @@ const Settings: FunctionComponent = () => {
         itemSizeCode="/settings.svg"
       />
       <div className={styles.main}>
-        <MainHeader />
+        <Header />
         <div className={styles.greetings}>
           <div className={styles.settings1}>Settings</div>
         </div>

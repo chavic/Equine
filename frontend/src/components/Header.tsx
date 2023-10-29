@@ -1,5 +1,7 @@
 import { FunctionComponent } from "react";
 import styles from "./Header.module.css";
+import { getAuthUser } from "../auth";
+import { Doctor, Nurse } from "../models";
 
 type HeaderType = {
   iconCode?: string;
@@ -7,9 +9,11 @@ type HeaderType = {
 };
 
 const Header: FunctionComponent<HeaderType> = ({ iconCode, iconTextCode }) => {
+  let user: any = getAuthUser();
+  
   return (
     <div className={styles.header}>
-      <div className={styles.seachBox}>
+      {/* <div className={styles.seachBox}>
         <div className={styles.searchWrapper}>
           <img className={styles.searchIcon} alt="" src="/search.svg" />
         </div>
@@ -18,13 +22,13 @@ const Header: FunctionComponent<HeaderType> = ({ iconCode, iconTextCode }) => {
             Find Patient, Ward, Nurse or Records
           </div>
         </div>
-      </div>
+      </div> */}
       <div className={styles.spacer} />
       <div className={styles.profile}>
         <div className={styles.profile1}>
           <div className={styles.georgeRuneParent}>
-            <div className={styles.georgeRune}>{`George Rune `}</div>
-            <div className={styles.gruneequinemed}>{`grune@equine.med `}</div>
+            <div className={styles.georgeRune}>{user.DoctorName || user.NurseName}</div>
+            <div className={styles.gruneequinemed}>{`${user.user}@equine.med `}</div>
           </div>
           <img
             className={styles.odamabolddownIcon}

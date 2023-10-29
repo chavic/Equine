@@ -1,8 +1,8 @@
 import { FunctionComponent } from "react";
 import FormContainer2 from "../components/FormContainer2";
-import MainHeader from "../components/MainHeader";
 import FilteredPatientsTable from "../components/FilteredPatientsTable";
 import styles from "./Patients.module.css";
+import Header from "../components/Header";
 
 const Patients: FunctionComponent = () => {
   return (
@@ -19,7 +19,7 @@ const Patients: FunctionComponent = () => {
         propColor="#050505"
       />
       <div className={styles.main}>
-        <MainHeader />
+        <Header />
         <div className={styles.greetings}>
           <div className={styles.patients1}>Patients</div>
         </div>

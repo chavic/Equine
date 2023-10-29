@@ -1,8 +1,8 @@
 import { FunctionComponent } from "react";
 import FormContainer2 from "../components/FormContainer2";
-import MainHeader from "../components/MainHeader";
 import FormContainer from "../components/FormContainer";
 import styles from "./Wards.module.css";
+import Header from "../components/Header";
 
 const Wards: FunctionComponent = () => {
   return (
@@ -19,7 +19,7 @@ const Wards: FunctionComponent = () => {
         propColor="#050505"
       />
       <div className={styles.main}>
-        <MainHeader />
+        <Header />
         <div className={styles.greetings}>
           <div className={styles.wards1}>Wards</div>
         </div>
