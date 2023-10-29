@@ -72,7 +72,7 @@ function App() {
     <Routes>
       <Route path="/" element={<SiginIn />} />
       <Route path="/settings" element={<Settings />} />
-      <Route path="/change-history" element={<ChangeHistory />} />
+      {/* <Route path="/change-history" element={<ChangeHistory />} /> */}
       <Route path="/wards" element={<Wards />} />
       <Route path="/patients" element={<Patients />} />
       <Route path="/home" element={<Home />} />

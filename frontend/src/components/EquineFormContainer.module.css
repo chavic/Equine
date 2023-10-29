@@ -159,3 +159,194 @@
   color: var(--white);
   font-family: var(--normal-paragraph);
 }
+
+.equine,
+.icon {
+  position: relative;
+}
+.icon {
+  width: 132.6px;
+  height: 85px;
+}
+.equine {
+  letter-spacing: 0.03em;
+}
+.logocontainer,
+.parent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.parent {
+  gap: var(--gap-3xs);
+}
+.logocontainer {
+  width: 280px;
+  height: 160px;
+}
+
+.homeIcon,
+.icontylPluslightboldhome {
+  position: relative;
+  width: 24px;
+  height: 24px;
+}
+.home1 {
+  position: relative;
+  font-size: var(--normal-paragraph-size);
+  letter-spacing: 0.03em;
+  font-weight: 500;
+  font-family: var(--normal-paragraph);
+  color: var(--light-blue);
+  text-align: left;
+}
+.button,
+.icontylPluslightboldhomeParent {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.icontylPluslightboldhomeParent {
+  justify-content: center;
+  gap: var(--gap-base);
+}
+.button {
+  cursor: pointer;
+  border: 0;
+  padding: 0 var(--padding-13xl);
+  background-color: var(--black);
+  align-self: stretch;
+  border-radius: var(--br-5xs);
+  height: 50px;
+  justify-content: flex-start;
+  box-sizing: border-box;
+}
+.usersIcon {
+  position: relative;
+  width: 26.9px;
+  height: 24px;
+}
+.patients {
+  position: relative;
+  font-size: var(--normal-paragraph-size);
+  letter-spacing: 0.03em;
+  font-weight: 500;
+  font-family: var(--normal-paragraph);
+  color: var(--black);
+  text-align: left;
+}
+.button1,
+.pagebuttonscontainer {
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+}
+.button1 {
+  cursor: pointer;
+  border: 0;
+  padding: 0 var(--padding-13xl);
+  background-color: transparent;
+  border-radius: var(--br-5xs);
+  height: 50px;
+  flex-direction: row;
+  justify-content: flex-start;
+  box-sizing: border-box;
+}
+.pagebuttonscontainer {
+  flex: 1;
+  flex-direction: column;
+  justify-content: center;
+  padding: var(--padding-3xs) var(--padding-15xl);
+  gap: var(--gap-base);
+}
+.frameChild {
+  align-self: stretch;
+  position: relative;
+  border-radius: var(--br-4xs);
+  background-color: var(--light-blue);
+  height: 1px;
+}
+.sidebarInner {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0 var(--padding-15xl);
+}
+.addPatient {
+  position: relative;
+  font-size: var(--normal-paragraph-size);
+  letter-spacing: 0.03em;
+  font-weight: 500;
+  font-family: var(--normal-paragraph);
+  color: var(--white);
+  text-align: left;
+}
+.icontylPluslightboldaddParent {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: var(--gap-base);
+}
+.sidebar {
+  margin: 0;
+  align-self: stretch;
+  background-color: var(--white);
+  width: 280px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  text-align: left;
+  font-size: var(--font-size-5xl);
+  color: var(--darker-blue);
+  font-family: var(--font-roboto-serif);
+}
+.goodMorningGeorge,
+.hereAnOverview {
+  position: relative;
+  letter-spacing: 0.03em;
+  font-weight: 500;
+}
+.hereAnOverview {
+  font-size: var(--normal-paragraph-size);
+  color: var(--mid-darker-blue);
+}
+.greetings,
+.home,
+.main {
+  display: flex;
+  align-items: flex-start;
+}
+.greetings {
+  align-self: stretch;
+  height: 90px;
+  flex-direction: column;
+  justify-content: center;
+  gap: var(--gap-3xs);
+}
+.home,
+.main {
+  justify-content: flex-start;
+}
+.main {
+  flex: 1;
+  height: 100vh;
+  flex-direction: column;
+  padding: 0 var(--padding-29xl);
+  box-sizing: border-box;
+}
+.home {
+  position: relative;
+  background-color: var(--light-blue);
+  width: 100%;
+  overflow: hidden;
+  flex-direction: row;
+  text-align: left;
+  font-size: var(--font-size-17xl);
+  color: var(--darker-blue);
+  font-family: var(--normal-paragraph);
+}

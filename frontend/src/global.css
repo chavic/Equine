@@ -74,3 +74,7 @@ body {
   /* Effects */
   --button-shadow: 0px 4px 4px rgba(53, 66, 80, 0.1);
 }
+
+a {
+  text-decoration: none;
+}

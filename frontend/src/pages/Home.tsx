@@ -2,8 +2,21 @@ import { FunctionComponent } from "react";
 import Header from "../components/Header";
 import DashboardContainer from "../components/DashboardContainer";
 import styles from "./Home.module.css";
+import { Link } from "react-router-dom";
+import { getAuthUser } from "../auth";
 
 const Home: FunctionComponent = () => {
+  let user: any = getAuthUser();
+  let name;
+
+  if (user.Role === 'Doctor') {
+    const doctorNameParts = user.DoctorName.split(' ');
+    name = doctorNameParts[0];
+  } else if (user.Role === 'Nurse') {
+    const nurseNameParts = user.NurseName.split(' ');
+    name = nurseNameParts[0];
+  }
+
   return (
     <div className={styles.home}>
       <nav className={styles.sidebar}>
@@ -14,7 +27,7 @@ const Home: FunctionComponent = () => {
           </div>
         </div>
         <div className={styles.pagebuttonscontainer}>
-          <button className={styles.button}>
+          <Link to="/home" className={styles.button}>
             <div className={styles.icontylPluslightboldhomeParent}>
               <img
                 className={styles.icontylPluslightboldhome}
@@ -24,19 +37,19 @@ const Home: FunctionComponent = () => {
               <img className={styles.homeIcon} alt="" src="/home.svg" />
               <div className={styles.home1}>Home</div>
             </div>
-          </button>
-          <button className={styles.button1}>
+          </Link>
+          <Link to="/patients" className={styles.button1}>
             <div className={styles.icontylPluslightboldhomeParent}>
               <img className={styles.usersIcon} alt="" src="/users.svg" />
               <div className={styles.patients}>Patients</div>
             </div>
-          </button>
-          <button className={styles.button1}>
+          </Link>
+          <Link to="/wards" className={styles.button1}>
             <div className={styles.icontylPluslightboldhomeParent}>
               <img className={styles.homeIcon} alt="" src="/map.svg" />
               <div className={styles.patients}>Wards</div>
             </div>
-          </button>
+          </Link>
         </div>
         <div className={styles.sidebarInner}>
           <div className={styles.frameChild} />
@@ -67,13 +80,7 @@ const Home: FunctionComponent = () => {
           <div className={styles.frameChild} />
         </div>
         <div className={styles.pagebuttonscontainer}>
-          <button className={styles.button1}>
-            <div className={styles.icontylPluslightboldhomeParent}>
-              <img className={styles.homeIcon} alt="" src="/folders.svg" />
-              <div className={styles.patients}>Change History</div>
-            </div>
-          </button>
-          <button className={styles.button1}>
+          <Link to="/settings" className={styles.button1}>
             <div className={styles.icontylPluslightboldhomeParent}>
               <img
                 className={styles.icontylPluslightboldhome}
@@ -83,13 +90,13 @@ const Home: FunctionComponent = () => {
               <img className={styles.homeIcon} alt="" src="/settings1.svg" />
               <div className={styles.patients}>Settings</div>
             </div>
-          </button>
+          </Link>
         </div>
       </nav>
       <div className={styles.main}>
         <Header iconCode="/search.svg" />
         <div className={styles.greetings}>
-          <div className={styles.goodMorningGeorge}>Good Morning, George</div>
+          <div className={styles.goodMorningGeorge}>Good Morning, {name}</div>
           <div className={styles.hereAnOverview}>
             Here an overview of actives in the clinic and your account
           </div>
