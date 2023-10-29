@@ -7,7 +7,6 @@ import {
 } from "react-router-dom";
 import SiginIn from "./pages/SiginIn";
 import Settings from "./pages/Settings";
-import ChangeHistory from "./pages/ChangeHistory";
 import Wards from "./pages/Wards";
 import Patients from "./pages/Patients";
 import Home from "./pages/Home";
