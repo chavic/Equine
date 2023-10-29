@@ -1,5 +1,6 @@
 const serverUrl = "http://localhost:3000";
 const tokenKey = "token";
+const userDataKey = "user";
 
 export async function signIn(username: string, password: string) {
   try {
@@ -18,6 +19,7 @@ export async function signIn(username: string, password: string) {
 
     const data = await response.json();
     localStorage.setItem(tokenKey, data.token);
+    localStorage.setItem(userDataKey, JSON.stringify(data.user));
 
     return data;
   } catch (error) {
@@ -55,4 +57,8 @@ export function signOut() {
 
 export function getAuthToken() {
   return localStorage.getItem(tokenKey);
+}
+
+export function getAuthUser() {
+  return JSON.parse((localStorage.getItem(userDataKey)) as string);
 }

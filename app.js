@@ -57,13 +57,15 @@ function verifyToken(req, res, next) {
   });
 }
 
-
 app.post('/signin', (req, res) => {
   const { username, password } = req.body;
-  console.log(username)
 
   db.query(
-    'SELECT * FROM Users WHERE Username = ?',
+    'SELECT U.*, D.Name AS DoctorName, D.Specialization AS DoctorSpecialization, N.Name AS NurseName ' +
+    'FROM Users U ' +
+    'LEFT JOIN Doctors D ON U.UserID = D.UserID ' +
+    'LEFT JOIN Nurses N ON U.UserID = N.UserID ' +
+    'WHERE U.Username = ?',
     [username],
     (err, results) => {
       if (err) {
@@ -77,16 +79,30 @@ app.post('/signin', (req, res) => {
 
       const user = results[0];
 
-
       if (user.PasswordHash === password) {
-        const token = generateToken({ userID: user.UserID, username: user.Username, role: user.Role });
-        res.json({ token });
+        const userData = {
+          UserID: user.UserID,
+          Username: user.Username,
+          Role: user.Role,
+          IsActive: user.IsActive,
+        };
+
+        if (user.Role === 'Doctor') {
+          userData.DoctorName = user.DoctorName;
+          userData.Specialization = user.DoctorSpecialization;
+        } else if (user.Role === 'Nurse') {
+          userData.NurseName = user.NurseName;
+        }
+
+        const token = generateToken(userData);
+        res.json({ token, user: userData });
       } else {
         res.status(401).json({ message: 'Authentication failed. Incorrect password.' });
       }
     }
   );
 });
+
 
 
 app.post('/signup', (req, res) => {

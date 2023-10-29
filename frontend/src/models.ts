@@ -31,7 +31,7 @@ export interface User {
   // Doctors table
   export interface Doctor {
     DoctorID: string;
-    Name: string;
+    DoctorName: string;
     Specialization: string;
     UserID: number;
   }
@@ -39,7 +39,7 @@ export interface User {
   // Nurses table
   export interface Nurse {
     NurseID: string;
-    Name: string;
+    NurseName: string;
     UserID: number;
   }
   
