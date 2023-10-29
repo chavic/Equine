@@ -22,9 +22,6 @@
 .logocontainer {
   width: 280px;
   height: 160px;
-  font-size: var(--font-size-5xl);
-  color: var(--darker-blue);
-  font-family: var(--font-roboto-serif);
 }
 .icontylPluslightboldhome {
   position: relative;
@@ -41,10 +38,14 @@
   height: 24px;
 }
 .home {
+  font-size: var(--normal-paragraph-size);
   letter-spacing: 0.03em;
   font-weight: 500;
+  font-family: var(--normal-paragraph);
+  color: var(--black);
+  text-align: left;
 }
-.homebtn,
+.button,
 .icontylPluslightboldhomeParent {
   display: flex;
   flex-direction: row;
@@ -54,33 +55,37 @@
   justify-content: center;
   gap: var(--gap-base);
 }
-.homebtn {
+.button {
+  cursor: pointer;
+  border: 0;
+  padding: 0 var(--padding-13xl);
+  background-color: var(--white);
   align-self: stretch;
   border-radius: var(--br-5xs);
-  background-color: var(--black);
   height: 50px;
   justify-content: flex-start;
-  padding: 0 var(--padding-13xl);
   box-sizing: border-box;
-  color: var(--light-blue);
 }
 .usersIcon {
   position: relative;
   width: 26.9px;
   height: 24px;
 }
-.pagebuttonscontainer,
-.patientsbtn {
+.button1,
+.pagebuttonscontainer {
   align-self: stretch;
   display: flex;
   align-items: center;
 }
-.patientsbtn {
+.button1 {
+  cursor: pointer;
+  border: 0;
+  padding: 0 var(--padding-13xl);
+  background-color: transparent;
   border-radius: var(--br-5xs);
   height: 50px;
   flex-direction: row;
   justify-content: flex-start;
-  padding: 0 var(--padding-13xl);
   box-sizing: border-box;
 }
 .pagebuttonscontainer {
@@ -105,46 +110,46 @@
   justify-content: center;
   padding: 0 var(--padding-15xl);
 }
-.addpatientbtn,
+.addPatient {
+  position: relative;
+  font-size: var(--normal-paragraph-size);
+  letter-spacing: 0.03em;
+  font-weight: 500;
+  font-family: var(--normal-paragraph);
+  color: var(--white);
+  text-align: left;
+}
 .icontylPluslightboldaddParent {
-  display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: flex-start;
-}
-.icontylPluslightboldaddParent {
   gap: var(--gap-base);
 }
-.addpatientbtn {
-  align-self: stretch;
-  border-radius: var(--br-5xs);
-  background-color: var(--black);
-  height: 50px;
-  padding: 0 var(--padding-13xl);
-  box-sizing: border-box;
-}
-.actionbuttonscontainer,
+.button3,
+.icontylPluslightboldaddParent,
 .sidebar {
   display: flex;
-  flex-direction: column;
+  justify-content: flex-start;
 }
-.actionbuttonscontainer {
+.button3 {
+  cursor: pointer;
+  border: 0;
+  padding: 0 var(--padding-13xl);
+  background-color: var(--black);
   align-self: stretch;
-  flex: 1;
+  border-radius: var(--br-5xs);
+  height: 50px;
+  flex-direction: row;
   align-items: center;
-  justify-content: center;
-  padding: var(--padding-3xs) var(--padding-15xl);
-  gap: var(--gap-base);
-  color: var(--white);
+  box-sizing: border-box;
 }
 .sidebar {
   background-color: var(--white);
   width: 280px;
   height: 100vh;
+  flex-direction: column;
   align-items: flex-start;
-  justify-content: flex-start;
   text-align: left;
-  font-size: var(--font-size-base);
-  color: var(--black);
-  font-family: var(--font-libre-franklin);
+  font-size: var(--font-size-5xl);
+  color: var(--darker-blue);
+  font-family: var(--font-roboto-serif);
 }

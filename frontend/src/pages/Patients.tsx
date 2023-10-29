@@ -1,26 +1,25 @@
 import { FunctionComponent } from "react";
-import EquineContainer from "../components/EquineContainer";
-import Header from "../components/Header";
+import FormContainer2 from "../components/FormContainer2";
+import MainHeader from "../components/MainHeader";
 import FilteredPatientsTable from "../components/FilteredPatientsTable";
 import styles from "./Patients.module.css";
 
 const Patients: FunctionComponent = () => {
   return (
     <div className={styles.patients}>
-      <EquineContainer
-        dimensions="/2584800822768.svg"
-        imageDimensions="/icontyl-pluslightboldhome.svg"
-        imageSize="/home.svg"
-        imageDimensionsText="/users1.svg"
-        imageDimensionsText2="/map.svg"
-        imageDimensionsText5="/folders.svg"
-        imageDimensions2="/user-outline.svg"
-        imageDimensionsText6="/settings.svg"
+      <FormContainer2
+        iconCode="/users1.svg"
+        itemCode="/map.svg"
+        itemSizeCode="/settings1.svg"
         frameDivBackgroundColor="#050505"
-        wardsBtnColor="#fff"
+        buttonColor="#fff"
+        frameDivBackgroundColor1="transparent"
+        frameDivColor="#050505"
+        frameDivBackgroundColor2="transparent"
+        propColor="#050505"
       />
       <div className={styles.main}>
-        <Header iconCode="/search.svg" />
+        <MainHeader />
         <div className={styles.greetings}>
           <div className={styles.patients1}>Patients</div>
         </div>

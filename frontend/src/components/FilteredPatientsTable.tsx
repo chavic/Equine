@@ -37,55 +37,21 @@ const FilteredPatientsTable: FunctionComponent = () => {
           <div className={styles.id}>
             <div className={styles.sex}>p2</div>
           </div>
-          <div className={styles.name}>
-            <div className={styles.sex}>JP Knight</div>
-          </div>
-          <div className={styles.initials}>
-            <div className={styles.sex}>F</div>
-          </div>
-          <div className={styles.address}>
-            <div className={styles.sex}>5 Lee Rd</div>
-          </div>
-          <div className={styles.postalcode}>
-            <div className={styles.sex}>SE6</div>
-          </div>
-          <div className={styles.admissiondate}>
-            <div className={styles.sex}>2001-06-15</div>
-          </div>
-          <div className={styles.dob}>
-            <div className={styles.sex}>1963-01-21</div>
-          </div>
-          <div className={styles.ward}>
-            <div className={styles.sex}>St johns</div>
-          </div>
-        </div>
-      </div>
-      <div className={styles.tablerow}>
-        <div className={styles.textContainer}>
-          <div className={styles.id}>
-            <div className={styles.sex}>p2</div>
-          </div>
-          <div className={styles.name}>
-            <div className={styles.sex}>EF Major</div>
-          </div>
-          <div className={styles.initials}>
-            <div className={styles.sex}>F</div>
-          </div>
-          <div className={styles.address}>
-            <div className={styles.sex}>12 High Rd</div>
-          </div>
-          <div className={styles.postalcode}>
-            <div className={styles.sex}>SE5</div>
-          </div>
-          <div className={styles.admissiondate}>
-            <div className={styles.sex}>2001-08-15</div>
-          </div>
-          <div className={styles.dob}>
-            <div className={styles.sex}>1967-01-13</div>
-          </div>
-          <div className={styles.ward}>
-            <div className={styles.sex}>Moody</div>
-          </div>
+          <input className={styles.input} placeholder="JP Knight" type="text" />
+          <input className={styles.input1} placeholder="F" type="text" />
+          <input className={styles.input2} placeholder="5 Lee Rd" type="text" />
+          <input className={styles.input3} placeholder="SE6" type="text" />
+          <input
+            className={styles.input4}
+            placeholder="2001-06-15"
+            type="text"
+          />
+          <input
+            className={styles.input5}
+            placeholder="1963-01-21"
+            type="text"
+          />
+          <input className={styles.input6} placeholder="St johns" type="text" />
         </div>
       </div>
     </div>

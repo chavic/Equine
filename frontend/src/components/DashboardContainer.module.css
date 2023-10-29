@@ -1,0 +1,71 @@
+.icontylPluslightboldadd {
+  position: relative;
+  width: 24px;
+  height: 24px;
+}
+.newEvent {
+  position: relative;
+  font-size: var(--normal-paragraph-size);
+  letter-spacing: 0.03em;
+  font-weight: 500;
+  font-family: var(--normal-paragraph);
+  color: var(--white);
+  text-align: left;
+}
+.icontylPluslightboldaddParent {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: var(--gap-base);
+}
+.bottomcontaner,
+.button {
+  height: 50px;
+  display: flex;
+  justify-content: flex-start;
+}
+.button {
+  cursor: pointer;
+  border: 0;
+  padding: 0 var(--padding-13xl);
+  background-color: var(--black);
+  border-radius: var(--br-5xs);
+  width: 244px;
+  flex-direction: row;
+  align-items: center;
+  box-sizing: border-box;
+}
+.bottomcontaner {
+  align-self: stretch;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.rectangle {
+  position: relative;
+  border-radius: var(--br-5xs);
+  background-color: var(--white);
+  width: 330px;
+  height: 220px;
+}
+.overviewcontainer {
+  align-self: stretch;
+  display: none;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: var(--padding-17xl) 0;
+  gap: var(--gap-17xl);
+}
+.dashboard {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: var(--gap-3xs);
+  text-align: left;
+  font-size: var(--font-size-xl);
+  color: var(--mid-darker-blue);
+  font-family: var(--normal-paragraph);
+}

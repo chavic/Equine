@@ -15,7 +15,6 @@
   justify-content: center;
 }
 .dashboard {
-  flex: 1;
   padding: 0 var(--padding-31xl);
 }
 .dashboard,
@@ -27,15 +26,15 @@
 }
 .main {
   align-self: stretch;
-  width: 1160px;
+  flex: 1;
   flex-direction: column;
   padding: 0 var(--padding-29xl);
-  box-sizing: border-box;
 }
 .wards {
   position: relative;
   background-color: var(--light-blue);
   width: 100%;
+  height: 100vh;
   overflow: hidden;
   flex-direction: row;
   text-align: left;

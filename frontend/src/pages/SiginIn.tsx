@@ -20,32 +20,30 @@ const SiginIn: FunctionComponent = () => {
         </div>
         <div className={styles.formcontainer}>
           <div className={styles.form}>
-            <div className={styles.textInput}>
-              <div className={styles.enterYourUsername}>
-                Enter Your Username
-              </div>
-            </div>
-            <div className={styles.textInput}>
-              <div className={styles.enterYourUsername}>
-                Enter Your Password
-              </div>
-            </div>
+            <input
+              className={styles.input}
+              placeholder="Enter Your Username"
+              type="text"
+            />
+            <input
+              className={styles.input}
+              placeholder="Enter Your Password"
+              type="text"
+            />
           </div>
         </div>
         <div className={styles.actionbtns}>
           <div className={styles.bottomcontaner}>
-            <div className={styles.loginbtn}>
+            <button className={styles.button}>
               <div className={styles.signInWrapper}>
-                <div className={styles.goodMorningWelcome}>Sign In</div>
+                <div className={styles.signIn}>Sign In</div>
               </div>
-            </div>
-            <div className={styles.loginbtn1}>
+            </button>
+            <button className={styles.button1}>
               <div className={styles.signInWrapper}>
-                <div className={styles.goodMorningWelcome}>
-                  Activate Account
-                </div>
+                <div className={styles.signIn}>Activate Account</div>
               </div>
-            </div>
+            </button>
           </div>
         </div>
       </div>

@@ -49,9 +49,7 @@
 .ward {
   width: 101px;
 }
-.patientstable,
 .tableheader,
-.tablerow,
 .textContainer,
 .ward {
   display: flex;
@@ -62,19 +60,90 @@
 .textContainer {
   flex: 1;
 }
-.patientstable,
-.tableheader,
-.tablerow {
-  align-self: stretch;
-  background-color: var(--white);
-}
 .tableheader {
+  align-self: stretch;
   border-radius: var(--br-5xs) var(--br-5xs) 0 0;
+  background-color: var(--white);
   border-bottom: 1px solid var(--light-blue);
   padding: var(--padding-5xl) 0;
 }
+.input,
+.input1 {
+  border: 0;
+  font-weight: 500;
+  font-family: var(--normal-paragraph);
+  font-size: var(--normal-paragraph-size);
+  background-color: transparent;
+}
+.input {
+  width: 100px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+}
+.input1 {
+  width: 93px;
+}
+.input1,
+.input2,
+.input3 {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+}
+.input2 {
+  border: 0;
+  font-weight: 500;
+  font-family: var(--normal-paragraph);
+  font-size: var(--normal-paragraph-size);
+  background-color: transparent;
+  width: 126px;
+}
+.input3 {
+  width: 137px;
+}
+.input3,
+.input4,
+.input5 {
+  border: 0;
+  font-weight: 500;
+  font-family: var(--normal-paragraph);
+  font-size: var(--normal-paragraph-size);
+  background-color: transparent;
+}
+.input4 {
+  width: 167px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+}
+.input5 {
+  width: 131px;
+}
+.input5,
+.input6,
 .patientstable,
 .tablerow {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+}
+.input6 {
+  border: 0;
+  font-weight: 500;
+  font-family: var(--normal-paragraph);
+  font-size: var(--normal-paragraph-size);
+  background-color: transparent;
+  width: 101px;
+}
+.patientstable,
+.tablerow {
+  align-self: stretch;
+  background-color: var(--white);
   padding: var(--padding-base) 0;
 }
 .patientstable {

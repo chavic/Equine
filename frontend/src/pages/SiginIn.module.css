@@ -23,8 +23,6 @@
   align-self: stretch;
   height: 183px;
   flex-direction: row;
-  font-size: var(--font-size-5xl);
-  font-family: var(--font-roboto-serif);
 }
 .goodMorningWelcome,
 .signIntoYour {
@@ -39,6 +37,10 @@
   display: inline-block;
   width: 492px;
 }
+.greetingscontanier,
+.input {
+  font-family: var(--normal-paragraph);
+}
 .greetingscontanier {
   display: flex;
   flex-direction: column;
@@ -47,62 +49,64 @@
   gap: var(--gap-3xs);
   font-size: var(--font-size-17xl);
 }
-.enterYourUsername {
-  position: relative;
-  letter-spacing: 0.03em;
+.input {
+  border: 0;
   font-weight: 500;
-  opacity: 0.25;
-}
-.form,
-.textInput {
-  flex-direction: column;
-  align-items: flex-start;
-}
-.textInput {
-  border-radius: var(--br-5xs);
+  font-size: var(--normal-paragraph-size);
   background-color: var(--white);
+  border-radius: var(--br-5xs);
   box-shadow: var(--button-shadow);
   width: 250px;
   height: 45px;
-  display: flex;
-  justify-content: center;
   padding: 0 var(--padding-5xl);
   box-sizing: border-box;
+}
+.form,
+.formcontainer,
+.input {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
 }
 .form {
   gap: var(--gap-base);
 }
-.form,
-.formcontainer,
-.signInWrapper {
-  display: flex;
-  justify-content: center;
-}
 .formcontainer {
   width: 250px;
   height: 150px;
-  flex-direction: column;
-  align-items: flex-start;
-  color: var(--color-black);
+}
+.signIn {
+  position: relative;
+  font-size: var(--normal-paragraph-size);
+  letter-spacing: 0.03em;
+  font-weight: 500;
+  font-family: var(--normal-paragraph);
+  color: var(--black);
+  text-align: left;
 }
 .signInWrapper {
+  display: flex;
   flex-direction: row;
   align-items: center;
+  justify-content: center;
 }
-.loginbtn {
+.button {
   box-shadow: var(--button-shadow);
 }
-.loginbtn,
-.loginbtn1 {
-  border-radius: var(--br-5xs);
+.button,
+.button1 {
+  cursor: pointer;
+  border: 0;
+  padding: 0 var(--padding-13xl);
   background-color: var(--white);
+  border-radius: var(--br-5xs);
   width: 250px;
   height: 50px;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  padding: 0 var(--padding-13xl);
   box-sizing: border-box;
 }
 .actionbtns,
@@ -112,14 +116,12 @@
 }
 .bottomcontaner {
   align-self: stretch;
-  height: 50px;
   display: flex;
   justify-content: flex-start;
   gap: var(--gap-3xs);
 }
 .actionbtns {
   width: 250px;
-  color: var(--black);
 }
 .actionbtns,
 .main,
@@ -128,8 +130,8 @@
   justify-content: flex-start;
 }
 .main {
-  width: 1440px;
-  height: 1024px;
+  flex: 1;
+  height: 100vh;
   flex-direction: column;
   align-items: center;
   padding: 100px var(--padding-29xl) 0;
@@ -143,7 +145,7 @@
   flex-direction: row;
   align-items: flex-start;
   text-align: left;
-  font-size: var(--normal-paragraph-size);
+  font-size: var(--font-size-5xl);
   color: var(--darker-blue);
-  font-family: var(--normal-paragraph);
+  font-family: var(--font-roboto-serif);
 }

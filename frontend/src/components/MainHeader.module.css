@@ -58,27 +58,30 @@
   align-items: flex-start;
   justify-content: flex-start;
 }
-.frame,
 .odamabolddownIcon {
   position: relative;
   width: 16px;
   height: 16px;
 }
+.frame,
+.frame2 {
+  overflow: hidden;
+  flex-shrink: 0;
+}
 .frame {
+  position: relative;
   border-radius: var(--br-5xs);
   background-color: var(--mid-darker-blue);
   width: 42px;
   height: 42px;
-  overflow: hidden;
-  flex-shrink: 0;
 }
-.gr {
-  position: undefined;
-  letter-spacing: 0.03em;
-  font-weight: 500;
-  display: inline-block;
-  width: 31px;
-  margin-top: 14px;
+.frame2 {
+  width: 21px;
+  height: 31px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
 }
 .frameChild {
   position: relative;

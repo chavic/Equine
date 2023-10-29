@@ -18,88 +18,86 @@
   font-weight: 500;
 }
 .admissiondate,
-.dob {
+.dob,
+.ward {
   width: 207px;
   display: flex;
   flex-direction: row;
   align-items: flex-start;
   justify-content: center;
 }
-.dob {
+.dob,
+.ward {
   width: 217px;
 }
 .ward {
   width: 192px;
-}
-.tableheader,
-.tablerow,
-.textContainer,
-.ward {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  justify-content: center;
 }
 .textContainer {
   flex: 1;
 }
+.input,
 .tableheader,
-.tablerow {
-  align-self: stretch;
-  background-color: var(--white);
+.textContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
 }
 .tableheader {
+  align-self: stretch;
   border-radius: var(--br-5xs) var(--br-5xs) 0 0;
+  background-color: var(--white);
   border-bottom: 1px solid var(--light-blue);
   padding: var(--padding-5xl) 0;
 }
-.tablerow {
-  padding: var(--padding-base) 0;
-}
-.id3 {
-  background-color: var(--light-blue);
-  width: 83px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-}
-.name3 {
+.input {
   width: 173px;
-  display: flex;
-  align-items: flex-start;
 }
-.admissiondate2,
-.dob2,
-.name3 {
-  background-color: var(--light-blue);
-  flex-direction: row;
-  justify-content: center;
+.input,
+.input1,
+.input2 {
+  border: 0;
+  font-weight: 500;
+  font-family: var(--normal-paragraph);
+  font-size: var(--normal-paragraph-size);
+  background-color: transparent;
 }
-.admissiondate2 {
+.input1 {
   width: 207px;
   display: flex;
-  align-items: flex-start;
-}
-.dob2 {
-  width: 217px;
-}
-.dob2,
-.ward2,
-.wardstable {
-  display: flex;
-  align-items: flex-start;
-}
-.ward2 {
-  background-color: var(--light-blue);
-  width: 192px;
   flex-direction: row;
+  align-items: flex-start;
   justify-content: center;
 }
+.input2 {
+  width: 217px;
+}
+.input2,
+.input3,
+.tablerow,
+.wardstable {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+}
+.input3 {
+  border: 0;
+  font-weight: 500;
+  font-family: var(--normal-paragraph);
+  font-size: var(--normal-paragraph-size);
+  background-color: transparent;
+  width: 192px;
+}
+.tablerow,
 .wardstable {
   align-self: stretch;
-  border-radius: var(--br-xs);
   background-color: var(--white);
+  padding: var(--padding-base) 0;
+}
+.wardstable {
+  border-radius: var(--br-xs);
   flex-direction: column;
   justify-content: flex-start;
   padding: 0 0 var(--padding-5xl);

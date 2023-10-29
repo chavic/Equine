@@ -28,37 +28,14 @@ const FormContainer: FunctionComponent = () => {
           <div className={styles.id}>
             <div className={styles.nurseInCharge}>w1</div>
           </div>
-          <div className={styles.name}>
-            <div className={styles.nurseInCharge}>St johns</div>
-          </div>
-          <div className={styles.admissiondate}>
-            <div className={styles.nurseInCharge}>Sister Murphy</div>
-          </div>
-          <div className={styles.dob}>
-            <div className={styles.nurseInCharge}>10</div>
-          </div>
-          <div className={styles.ward}>
-            <div className={styles.nurseInCharge}>6</div>
-          </div>
-        </div>
-      </div>
-      <div className={styles.tablerow}>
-        <div className={styles.textContainer}>
-          <div className={styles.id3}>
-            <div className={styles.nurseInCharge}>w2</div>
-          </div>
-          <div className={styles.name3}>
-            <div className={styles.nurseInCharge}>Moody</div>
-          </div>
-          <div className={styles.admissiondate2}>
-            <div className={styles.nurseInCharge}>Sister Sarah</div>
-          </div>
-          <div className={styles.dob2}>
-            <div className={styles.nurseInCharge}>6</div>
-          </div>
-          <div className={styles.ward2}>
-            <div className={styles.nurseInCharge}>2</div>
-          </div>
+          <input className={styles.input} placeholder="St johns" type="text" />
+          <input
+            className={styles.input1}
+            placeholder="Sister Murphy"
+            type="text"
+          />
+          <input className={styles.input2} placeholder="10" type="text" />
+          <input className={styles.input3} placeholder="6" type="text" />
         </div>
       </div>
     </div>

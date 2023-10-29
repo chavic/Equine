@@ -1,12 +1,7 @@
 import { FunctionComponent } from "react";
-import styles from "./Header.module.css";
+import styles from "./MainHeader.module.css";
 
-type HeaderType = {
-  iconCode?: string;
-  iconTextCode?: string;
-};
-
-const Header: FunctionComponent<HeaderType> = ({ iconCode, iconTextCode }) => {
+const MainHeader: FunctionComponent = () => {
   return (
     <div className={styles.header}>
       <div className={styles.seachBox}>
@@ -34,7 +29,9 @@ const Header: FunctionComponent<HeaderType> = ({ iconCode, iconTextCode }) => {
           <div className={styles.frameParent}>
             <div className={styles.frame} />
             <div className={styles.frame1}>
-              <div className={styles.gr}>GR</div>
+              <div className={styles.frame2}>
+                <div className={styles.georgeRune}>GR</div>
+              </div>
               <div className={styles.frameChild} />
             </div>
           </div>
@@ -44,4 +41,4 @@ const Header: FunctionComponent<HeaderType> = ({ iconCode, iconTextCode }) => {
   );
 };
 
-export default Header;
+export default MainHeader;

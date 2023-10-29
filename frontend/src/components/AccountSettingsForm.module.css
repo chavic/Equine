@@ -1,0 +1,75 @@
+.accountSettings,
+.manageYouInformation {
+  position: relative;
+  letter-spacing: 0.03em;
+  font-weight: 500;
+}
+.manageYouInformation {
+  font-size: var(--normal-paragraph-size);
+}
+.innerHeader {
+  align-self: stretch;
+  height: 90px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: var(--gap-3xs);
+}
+.icontylPluslightboldadd {
+  position: relative;
+  width: 24px;
+  height: 24px;
+}
+.createUser {
+  position: relative;
+  font-size: var(--normal-paragraph-size);
+  letter-spacing: 0.03em;
+  font-weight: 500;
+  font-family: var(--normal-paragraph);
+  color: var(--white);
+  text-align: left;
+}
+.icontylPluslightboldaddParent {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: var(--gap-base);
+}
+.bottomcontaner,
+.button,
+.dashboard {
+  display: flex;
+  justify-content: flex-start;
+}
+.button {
+  cursor: pointer;
+  border: 0;
+  padding: 0 var(--padding-13xl);
+  background-color: var(--black);
+  border-radius: var(--br-5xs);
+  width: 244px;
+  height: 50px;
+  flex-direction: row;
+  align-items: center;
+  box-sizing: border-box;
+}
+.bottomcontaner,
+.dashboard {
+  align-self: stretch;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.bottomcontaner {
+  height: 70px;
+  padding: var(--padding-3xs) 0 0;
+  box-sizing: border-box;
+}
+.dashboard {
+  gap: var(--gap-3xs);
+  text-align: left;
+  font-size: var(--font-size-13xl);
+  color: var(--mid-darker-blue);
+  font-family: var(--normal-paragraph);
+}
