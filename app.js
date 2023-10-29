@@ -60,6 +60,7 @@ function verifyToken(req, res, next) {
 
 app.post('/signin', (req, res) => {
   const { username, password } = req.body;
+  console.log(username)
 
   db.query(
     'SELECT * FROM Users WHERE Username = ?',
@@ -122,6 +123,49 @@ app.post('/signup', (req, res) => {
   );
 });
 
+app.post('/activate-user', (req, res) => {
+  const { username, password } = req.body;
+
+  db.query(
+    'SELECT * FROM Users WHERE Username = ? AND PasswordHash = ?',
+    [username, password],
+    (err, results) => {
+      if (err) {
+        console.error('Database error:', err);
+        return res.status(500).json({ message: 'Internal server error' });
+      }
+
+      if (results.length === 0) {
+        return res.status(401).json({ message: 'Activation failed. Invalid username or password.' });
+      }
+
+      const user = results[0];
+
+      if (user.IsActive) {
+        return res.status(400).json({ message: 'User is already active.' });
+      }
+
+      db.query(
+        'UPDATE Users SET IsActive = true WHERE UserID = ?',
+        [user.UserID],
+        (err) => {
+          if (err) {
+            console.error('Database error:', err);
+            return res.status(500).json({ message: 'Internal server error' });
+          }
+
+          const token = generateToken({
+            userID: user.UserID,
+            username: user.Username,
+            role: user.Role,
+          });
+
+          res.json({ message: 'User activated successfully.', token, userID: user.UserID });
+        }
+      );
+    }
+  );
+});
 
 app.put('/change-role/:userID', verifyToken, (req, res) => {
   const { userID } = req.params;

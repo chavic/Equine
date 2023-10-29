@@ -4,7 +4,7 @@ CREATE TABLE Users (
     Username VARCHAR(50) UNIQUE NOT NULL,
     PasswordHash VARCHAR(100) NOT NULL,
     Role VARCHAR(20) NOT NULL CHECK (Role IN ('Admin', 'Doctor', 'Nurse', 'Receptionist')),
-    IsActive BOOLEAN DEFAULT TRUE
+    IsActive BOOLEAN DEFAULT FALSE
 );
 
 -- Wards table
